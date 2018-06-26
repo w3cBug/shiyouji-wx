@@ -1,0 +1,6 @@
+/* pages/index1/index1.wxss */
+  /*  列表 */
+.menu-list {
+  border-bottom: 1rpx solid #D9D9D9;
+  font-weight: 600;
+}

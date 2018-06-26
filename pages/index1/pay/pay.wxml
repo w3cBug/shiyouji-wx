@@ -1,0 +1,73 @@
+<!--pages/index1/pay/pay.wxml-->
+          <scroll-view  style='height:800rpx' scroll-y="true" >
+            <view class="modal-content">
+              <block wx:for="{{order.detail}}" wx:key="" wx:if="{{item.mainMenuType == '菜品'}}" >
+                <view class='menu-box '  >
+                  <view class='menu-img'>
+                    <image src='/image/food.png'></image>
+                  </view>
+                  <view class='menu-name'>{{index+1}}.  {{item.menuName}}
+                  </view>
+                  <view class='menu-price'>￥   {{item.price}} </view>
+                  <view class='menu-numb'>
+                     数量：{{item.qty}}
+                  </view>
+                  <text class='menu-time'>时间：{{item.time}}</text>
+                </view>
+              </block>
+            </view>
+          </scroll-view>
+
+
+              <view class='little-cost'>
+              <block wx:for="{{order.detail}}" wx:key="" wx:if="{{item.mainMenuType != '菜品'}}" >
+                <view class='rice'>
+                  <view class='rice-left'>{{item.menuName}}  ￥{{item.price}}</view> 
+                  <view class='rice-right'>
+                    数量：{{item.qty}}
+                  </view>
+                </view>
+              </block>
+
+               
+              </view>
+
+
+            <view class='tips1'> 菜品:{{order.foodQty>0?order.foodQty+"￥"+order.foodMry:" 无 "}}  饭:{{order.riceQty>0?order.riceQty+"￥"+order.riceMry:" 无 "}}    茶位:{{order.teaQty>0?order.teaQty+"￥"+order.teaMry:" 无 "}} </view> 
+              <view class='menu-foot'>
+                <view class='total-price' bindtap='downTap'>
+                  总:￥{{order.sumMry}}
+                </view>
+              <view class='pay' bindtap='pay1Tap'>马上结数</view>
+            </view>
+
+<!-- 弹窗  -->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+ <view class="modal-dialog" wx:if="{{showModal}}">
+    <view class='pay-header'>请选择支付方式结算</view>
+      <view class='pay-body'>
+            <view class='pay-mode'>
+              <radio-group class="radio-group" bindchange="radioChange">
+                  <label class="radio " wx:for="{{items}}">
+                      <radio class="weui-cell__bd" value="{{item.name}}" checked="{{item.checked}}">{{item.value}} </radio>
+                  </label>
+              </radio-group>
+            </view> 
+            
+            <view class='pay-money'>
+                <view class='money-1'>
+                    <text>应付金额:￥{{order.sumMry}}</text>  
+                </view>
+                <view class='money-2'>
+                    <text>实付金额:￥</text>
+                    <input value='{{order.sumMry}}' bindinput="bindKeyInput"></input>
+                    <view class='money-trip'>不输入按应付金额结算</view>
+                </view>
+            </view>
+            
+      </view>
+    <view class='pay-btn'>
+      <button type="default" size="20"  bindtap="btnCanelTap" hover-class="other-button-hover"> 取消 </button>
+     <button type="primary" size="20" bindtap="btnConfirmTap" hover-class="other-button-hover"> 确认 </button>
+    </view>
+ </view>

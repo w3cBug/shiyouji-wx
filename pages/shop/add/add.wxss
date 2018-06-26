@@ -1,0 +1,401 @@
+/* pages/index1/order/order.wxss */
+@import '../../../weui.wxss';
+page{
+  height:100%
+  }
+/* model内容  */
+  .modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content:  space-around;
+}
+.modal-dialog {
+  display: flex;
+  flex-direction: column;
+  width: 700rpx;
+  height: 1080rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 25rpx;
+  left: 25rpx;
+  z-index: 9999;
+  background: #f9f9f9;
+  border-radius: 36rpx;
+}
+.modal-content {
+  width: auto;
+  height:100%;
+}
+/* 菜品设置列表  */
+.cp-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #10AEFF;
+  border-radius: 36rpx 36rpx 0 0;
+  height: 80rpx;
+  line-height: 80rpx;
+  width: auto;
+  text-align: center;
+}
+
+.cp-header-1{
+  width: 15%;
+  border-right: 1rpx solid #ccc;
+}
+
+.cp-header-2 {
+  width: 35%;
+  border-right: 1rpx solid #ccc;
+}
+.cp-header-3 {
+  width: 25%;
+  border-right: 1rpx solid #ccc;
+}
+.cp-header-4 {
+  width: 25%;
+}
+.cp-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: auto;
+  text-align: center;
+  border-bottom: 2rpx solid #ccc;
+}
+.cp-item-1 {
+  width: 15%;
+}
+.cp-item-2 {
+  width: 35%;
+}
+.cp-item-3 {
+  width: 25%;
+}
+.cp-item-4 {
+  padding-top: 28rpx;
+  width: 25%;
+  float: left;
+  text-align: center;
+}
+.cp-item-4 button {
+  height: 50rpx;
+  width: 80rpx;
+  padding: 0;
+  margin: 0;
+  line-height: 50rpx;
+}
+.cp-footer,.cl-footer {
+  display: flex;
+  flex-direction: row;
+  height: 90rpx;
+  width: auto;
+  text-align: center;
+  line-height: 90rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+.cp-footer-text {
+  width: 70%;
+}
+.cp-footer-btn,.cl-footer-btn {
+  height: 90rpx;
+  width: 30%;
+}
+
+/* 杂项设置  */
+.zx-header {
+  display: flex;
+  flex-direction: row;
+  background: #10AEFF;
+  border-radius: 36rpx 36rpx 0 0;
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 100%;
+  text-align: center;
+  font-size: 28rpx;
+  white-space: nowrap;
+}
+.zx-header-1 {
+  width: 120rpx;
+  height: 80rpx;
+  font-weight: 600;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.zx-box-content {
+  height: 900rpx;
+  width: 100%;
+  font-size: 30rpx;
+  font-weight: 600;
+  
+}
+.zx-item {
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #ccc;
+}
+.zx-item-box {
+  width: 119rpx;
+  text-align: center;
+  border-right: 1rpx solid #ccc;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  justify-content: center;
+}
+.zx-item-box picker{
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+
+
+  /* 顶部按钮  */
+.menu-top {
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+}
+.btn-area {
+  width: 750rpx;
+}
+.btn-a,.btn-b {
+  width: 50%;
+  line-height: 80rpx;
+  margin: 10rpx;
+  text-align: center;
+  background: #1296db;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.menu {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+  
+}
+.menu-left {
+  width: 187.5rpx ;
+  background: #ECECEC;
+  height: 100%;
+  display: block;
+}
+
+.menu-right {
+  background: #E2E2E2;
+  width:562.5rpx;
+  height:100%;
+  
+}
+
+
+  /* left style  */
+.type-list {
+  width:187.5rpx;
+  height: 120rpx;
+  border-bottom: 1rpx solid #ccc;
+  font-weight: 600;
+  line-height: 120rpx;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  position: relative
+}
+.type-name {
+  margin-right: 56rpx;
+  padding-left:50rpx;
+  border-left: solid #13D1BE;
+}
+
+/* right  */
+.btn-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  height: 90rpx;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.btn-add {
+  font-size: 30rpx;
+  width: 65%;
+  height: 80rpx;
+  margin-right: 20rpx;
+}
+.btn-manage{
+  font-size: 30rpx;
+  width: 30%;
+  height: 80rpx;
+}
+.menu-box {
+  width: auto;
+  height: 120rpx;
+  background: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: 1rpx solid #E2E2E2;
+  display: flex;
+  flex-direction: row;
+}
+
+/* right  */
+.menu-box {
+  width: auto;
+  height: 130rpx;
+  padding: 10rpx;
+  background: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  position: relative;
+  border-bottom: 1rpx solid #E2E2E2;
+  border-radius: 5rpx;
+}
+.menu-box image {
+  width: 100rpx;
+  height: 100rpx;
+  float: left;
+  overflow: hidden;
+}
+.menu-name {
+  margin-left: 18rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+
+}
+.menu-price {
+  margin-left: 30rpx;
+}
+.menu-check {
+  font-size: 23rpx;
+  position:absolute;
+  bottom: 0;
+  left: 25rpx;
+}
+.menu-price {
+  color: red;
+}
+.menu-btn {
+  position: absolute;
+  bottom: 10rpx;
+  right: 35rpx;
+  text-align: center;
+
+}
+/* 编辑  */
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.cancel-icon {
+  position: absolute;
+  top: 20rpx;
+  right: 25rpx;
+}
+.list-402 {
+  height: 100rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #ccc;
+  text-align: center;
+}
+.list-402-item {
+  margin-left: 80rpx;
+  padding-top: 30rpx;
+  height: 70rpx;
+  display: flex;
+  flex-direction: row;
+}
+.list-402-item text {
+  width: 30%;
+}
+.list-402-item input {
+  width: 70%;
+}
+.edit-content {
+  height: 600rpx;
+
+}
+.sundry {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: auto;
+}
+
+.sundry-title{
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  background: #1296db;
+  font-size:30rpx;
+}
+.sundry-title label {
+  width: 100%;
+  height: 80rpx;
+  align-items: center;
+  line-height: 80rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #ccc;
+}
+.sundry-right {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.sundry-item {
+  font-size: 30rpx;
+  height: 80rpx;
+  background: #ccc;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #fff;
+  
+}
+.sundry-item label {
+  width: 120rpx;
+  margin-left: 10rpx;
+  height: 80rpx;
+  align-items: center;
+  line-height: 80rpx;
+  text-align: center;
+  white-space: nowrap;
+}
+.edit-btn {
+  height: 120rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+.edit-btn button{
+  height: 80rpx;
+  width: 45%;
+}

@@ -1,0 +1,359 @@
+<!--pages/shop/add/add.wxml-->
+<view class='container'>
+      <view class='menu-top'>
+          <button class='btn-area btn-a' bindtap='cpSetTap'>菜类设置</button>
+          <!-- 菜品设置  -->
+          <view class="modal-mask"  bindtap="CPhideModal"  wx:if="{{CPshowModal}}"></view>
+            <view class="modal-dialog" wx:if="{{CPshowModal}}">
+              <view class="modal-content">
+                  <view class='cp-header'>
+                        <view class='cp-header-1'>序号</view>
+                        <view class='cp-header-2'>菜类名</view>
+                        <view class='cp-header-3'>菜类型</view>
+                        <view class='cp-header-4'>操作</view>
+                      </view>
+                      <scroll-view style='height:900rpx' scroll-y="true" >
+                        
+                        <block wx:for="{{typeName}}"   wx:key="{{item.RecNo}}" >
+                          <view class='cp-item'>
+                            <view class='cp-item-1'>{{index+1}}</view>
+                            <view class='cp-item-2'><input value='{{item.mainMenuName}}'></input></view>
+                            <view class='cp-item-3'>{{item.mainMenuType}}</view>
+                            <view class='cp-item-4'><button size='mini'>↑</button><button size='mini'>↓</button></view>
+                          </view>
+                        </block>
+                      </scroll-view>
+
+                        <view class='cl-footer'>
+                          <view class='cl-footer-btn'><button  catchtap='CPhideModal'>返回</button></view>
+                          <view class='cl-footer-btn'><button  catchtap='CSaddTap'>添加</button></view>
+                          <view class='cl-footer-btn'><button type='primary' catchtap='mSaveTap'>保存</button></view>
+                        </view>
+
+
+              </view>
+            </view>
+          
+
+          <button class='btn-area btn-b' bindtap='zxSetTap'>杂项设置</button>
+          <!-- 杂项设置弹窗  -->
+          <view class="modal-mask" bindtap="ZXhideModal"  wx:if="{{ZXshowModal}}"></view>
+            <view class="modal-dialog" wx:if="{{ZXshowModal}}">
+              <view class="modal-content">
+              
+                <view class='zx-header'>
+                  <view class='zx-header-1'>名称</view>
+                  <view class='zx-header-1'>选项1</view>
+                  <view class='zx-header-1'>选项2</view>
+                  <view class='zx-header-1'>选项3</view>
+                  <view class='zx-header-1'>选项4</view>
+                  <view class='zx-header-1'>选项5</view>
+                  <view class='zx-header-1'>是否同价</view>
+                </view>
+
+                  <view class='zx-box-content'>
+                    <view class='zx-item'>
+                      <view class='zx-item-box'>
+                        <input value='规格'></input>
+                      </view>
+                      <view class='zx-item-box'>
+                        <input value='大'></input>
+                      </view>
+                      <view class='zx-item-box'>
+                        <input value='中'></input>
+                      </view>
+                      <view class='zx-item-box'>
+                        <input value='小'></input>
+                      </view>
+                      <view class='zx-item-box'>
+                        <input value=''></input>
+                      </view>
+                      <view class='zx-item-box'>
+                        <input value=''></input>
+                      </view>
+                      <view class='zx-item-box'> 
+                         <picker bindchange="bindPickerChange" value="{{indx}}" range="{{array}}">
+                             {{array[indx]}}
+                          </picker>
+                      </view>
+                    </view>
+                    <view class='zx-item'>
+                      <view class='zx-item-box'>
+                        <input value='做法'></input>
+                      </view>
+                      <view class='zx-item-box'>
+                        <input value='炒'></input>
+                      </view>
+                      <view class='zx-item-box'>
+                        <input value='煎'></input>
+                      </view>
+                      <view class='zx-item-box'>
+                        <input value='炸'></input>
+                      </view>
+                      <view class='zx-item-box'>
+                        <input value=''></input>
+                      </view>
+                      <view class='zx-item-box'>
+                        <input value=''></input>
+                      </view>
+                      <view class='zx-item-box'>
+                          <picker bindchange="bindPickerChange" value="{{indx}}" range="{{array}}">
+                             {{array[indx]}}
+                          </picker>
+                      </view>
+                    </view>
+                    <view class='zx-item'>
+                      <view class='zx-item-box'>
+                        <input focus='true' selection-start='0' selection-end='2' value='加料'></input>
+                      </view>
+                      <view class='zx-item-box'>
+                        <input value='青菜'></input>
+                      </view>
+                      <view class='zx-item-box'>
+                        <input value='肉'></input>
+                      </view>
+                      <view class='zx-item-box'>
+                        <input value='粉丝'></input>
+                      </view>
+                      <view class='zx-item-box'>
+                        <input value=''></input>
+                      </view>
+                      <view class='zx-item-box'>
+                        <input value=''></input>
+                      </view>
+                      <view class='zx-item-box'>
+                        <picker bindchange="bindPickerChange" value="{{indx}}" range="{{array}}">
+                             {{array[indx]}}
+                          </picker>
+                      </view>
+                    </view>
+                    
+                  </view>
+                
+                      <view class='cl-footer'>
+                              <view class='cl-footer-btn'><button  catchtap='CPhideModal'>返回</button></view>
+                              <view class='cl-footer-btn'><button  catchtap='mSaveTap'>添加</button></view>
+                              <view class='cl-footer-btn'><button type='primary' catchtap='mSaveTap'>保存</button></view>
+                      </view>
+              </view>
+            </view>  
+
+       </view>
+
+    <view class='menu'>
+      
+
+        <!-- 左侧  -->
+               <view class='menu-left'>
+                <scroll-view style='height:100%' scroll-y>
+                  <block wx:for="{{typeName}}" wx:key="{{item.id}}">
+                      <view class='type-list ' bindtap='turnMenu'  data-id="{{index}}" data-mainMenuId="{{item.mainMenuId}}">
+                         <text class='{{index == id ?"type-name":""}} '>{{item.mainMenuName}}</text> 
+                      </view>
+                  </block>
+                </scroll-view>
+              </view>
+        
+          
+          
+        <!-- 右侧  -->
+          
+          <view class='menu-right'>
+            <view class='btn-box'>
+               <button class='btn-add' bindtap='addTap'>新增菜式</button>
+               <button class='btn-manage' bindtap='manageTap'>管理</button>
+               <!-- 管理弹窗  -->
+               <view class="modal-mask" bindtap="hideModal"  wx:if="{{showModal}}"></view>
+                  <view class="modal-dialog" wx:if="{{showModal}}">
+                    <view class="modal-content">
+                      <view class='cp-header'>
+                        <view class='cp-header-1'>序号</view>
+                        <view class='cp-header-2'>菜品名</view>
+                        <view class='cp-header-3'>菜类型</view>
+                        <view class='cp-header-4'>操作</view>
+                      </view>
+                      <scroll-view style='height:900rpx' scroll-y="true" >
+                        
+                        <block wx:for="{{menuPage}}"  wx:if="{{item.mainMenuId ==mainMenuId}}" wx:key="{{item.RecNo}}" >
+                          <view class='cp-item'>
+                            <view class='cp-item-1'>{{index+1}}</view>
+                            <view class='cp-item-2'>{{item.menuName}}</view>
+                            <view class='cp-item-3'>{{item.mainMenuName}}</view>
+                            <view class='cp-item-4'><button size='mini'>↑</button><button size='mini'>↓</button></view>
+                          </view>
+                        </block>
+                      </scroll-view>
+                           <view class='cl-footer'>
+                              <view class='cl-footer-btn'><button  catchtap='CPhideModal'>返回</button></view>
+                              <view class='cl-footer-btn'><button  catchtap='mSaveTap'>添加</button></view>
+                              <view class='cl-footer-btn'><button type='primary' catchtap='mSaveTap'>保存</button></view>
+                      </view>
+                        <!-- <view class='cp-footer'>
+                          <view class='cp-footer-text'>合计：{3}类</view>
+                          <view class='cp-footer-btn'><button type='primary' catchtap='mSaveTap'>保存</button></view>
+                        </view> -->
+                    </view>
+                  </view>  
+            </view>
+            
+          <!-- 新增弹窗  -->
+          <view class="modal-mask" bindtap="addhideModal"  wx:if="{{addshowModal}}"></view>
+            <view class="modal-dialog" wx:if="{{addshowModal}}">
+              <view class="modal-content">
+                  <form bindsubmit="formSubmit" bindreset="formReset"  >
+                        
+                        <view class="list-402" >
+                            <view class="list-402-item">菜名：
+                              <input name="菜名" placeholder="请输入菜名" value='' />
+                            </view>
+                        </view>
+                        <view class="list-402">
+                              <view class="list-402-item">价格： 
+                              <input name="价格" placeholder="请输入价格" value='' />
+                            </view>
+                        </view>
+
+                        <view class="list-402">
+                            <view class="list-402-item">是否时价：
+                                <switch name="switch"/>
+                            </view>
+                        </view>
+                        <view class="edit-content">
+                            <text>杂项：</text> 
+                              <view class='sundry'>
+                                  <checkbox-group class='sundry-title' name="sundry" bindchange="checkboxChange">
+                                      <label><checkbox value="size"/>规格</label>
+                                      <label><checkbox value="method"/>做法</label>
+                                      <label><checkbox value="process"/>加料</label>
+                                  </checkbox-group>
+                               
+                                  <view class='sundry-right'>
+                                    <radio-group  name="size"  class='sundry-item' bindchange="sizeChange"  > 
+                                      <label> <radio disabled='{{checkbox1}}' value="size1" />大</label>
+                                      <label> <radio disabled='{{checkbox1}}' value="size2" />中</label>
+                                      <label> <radio disabled='{{checkbox1}}'value="size3" />小</label>
+                                    </radio-group>
+                                    <radio-group  name="method"  class='sundry-item' bindchange="methodChange">
+                                      <label> <radio disabled='{{checkbox2}}' value="method1" />煎炒</label>
+                                      <label> <radio disabled='{{checkbox2}}' value="method2" />焖</label>
+                                      <label> <radio disabled='{{checkbox2}}' value="method3" />炸</label>
+                                    </radio-group>
+                                    <radio-group  name="process"  class='sundry-item' bindchange="processChange">
+                                      <label> <radio disabled='{{checkbox3}}' value="process1" />肉丝</label>
+                                      <label> <radio disabled='{{checkbox3}}' value="process2" />青菜</label>
+                                      <label> <radio disabled='{{checkbox3}}' value="process3" />汤底</label>
+                                    </radio-group>
+                                  </view>
+                              </view>
+                            
+                        </view>
+                        
+                        <view class="edit-btn">
+                            <button formType="reset">重置</button>
+                            <button type='primary' formType="submit">确定新增</button>
+                        </view>
+                        
+                        
+                      </form>
+                      <icon type='clear' class='cancel-icon' bindtap='iconCancel' size='25' ></icon>
+                
+                  
+              </view>
+            </view>  
+
+
+
+          <scroll-view style='height:980rpx;'scroll-y="true" >
+            <block wx:for="{{menuPage}}" wx:key="{{item.RecNo}}"  wx:if="{{item.mainMenuId ==mainMenuId}}"  >
+              <view class='menu-box '  >
+                  <view class='menu-img'>
+                      <image src='/image/food.png'></image>
+                  </view>
+                  <view class='menu-check'>
+                      是否时价: <icon type='success_no_circle' size='18' color='red'></icon>
+                  </view>
+                  <view class='menu-name'>菜名:{{item.menuName}}</view>
+                  <view class='menu-price'>￥   {{item.price}}</view>
+                  <view class='menu-btn'>
+                      <button type='primary' size='mini' catchtap='editTap' data-idx="{{index}}">编辑</button>
+                  </view>
+              </view>
+            </block>
+          </scroll-view>
+             <!--编辑按钮内容  -->
+              <view class="modal-mask" bindtap="edithideModal"  wx:if="{{editshowModal}}"></view>
+                <view class="modal-dialog" wx:if="{{editshowModal}}">
+                  <view class="modal-content" >
+                    <view class='edit-form'>
+                    
+                      <form bindsubmit="formSubmit" bindreset="formReset"  >
+                        
+                        <view class="list-402" >
+                            <view class="list-402-item">菜名：
+                              <input name="menuName" placeholder="请输入菜名" value='{{currMenuPage.menuName}}' />
+                            </view>
+                        </view>
+                        <view class="list-402">
+                              <view class="list-402-item">价格： 
+                              <input name="price" placeholder="请输入价格" value='{{currMenuPage.price}}' />
+                            </view>
+                        </view>
+
+                        <view class="list-402">
+                            <view class="list-402-item">是否时价：
+                                <switch name="switch"/>
+                            </view>
+                        </view>
+                        <view class="edit-content">
+                            <text>杂项：</text> 
+                              <view class='sundry'>
+                                  <checkbox-group class='sundry-title' name="sundry" bindchange="checkboxChange">
+                                      <label><checkbox value="size"/>规格</label>
+                                      <label><checkbox value="method"/>做法</label>
+                                      <label><checkbox value="process"/>加料</label>
+                                  </checkbox-group>
+                               
+                                  <view class='sundry-right'>
+                                    <radio-group  name="size"  class='sundry-item' bindchange="sizeChange"  > 
+                                      <label> <radio disabled='{{checkbox1}}' value="size1" />大</label>
+                                      <label> <radio disabled='{{checkbox1}}' value="size2" />中</label>
+                                      <label> <radio disabled='{{checkbox1}}'value="size3" />小</label>
+                                    </radio-group>
+                                    <radio-group  name="method"  class='sundry-item' bindchange="methodChange">
+                                      <label> <radio disabled='{{checkbox2}}' value="method1" />煎炒</label>
+                                      <label> <radio disabled='{{checkbox2}}' value="method2" />焖</label>
+                                      <label> <radio disabled='{{checkbox2}}' value="method3" />炸</label>
+                                    </radio-group>
+                                    <radio-group  name="process"  class='sundry-item' bindchange="processChange">
+                                      <label> <radio disabled='{{checkbox3}}' value="process1" />肉丝</label>
+                                      <label> <radio disabled='{{checkbox3}}' value="process2" />青菜</label>
+                                      <label> <radio disabled='{{checkbox3}}' value="process3" />汤底</label>
+                                    </radio-group>
+                                  </view>
+                              </view>
+                            
+                        </view>
+                        
+                        <view class="edit-btn">
+                            <button formType="reset">重置</button>
+                            <button type='primary' formType="submit">保存</button>
+                        </view>
+                        
+                        
+                      </form>
+                      <icon type='clear' class='cancel-icon' bindtap='iconCancel' size='25' ></icon>
+                     </view>
+                      
+                  </view>
+                </view>  
+              
+                
+          </view>
+                
+          
+
+
+
+        </view>
+        
+      </view>

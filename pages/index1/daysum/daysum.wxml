@@ -1,0 +1,43 @@
+<!--pages/statistics/dayStat/dayStat.wxml-->
+<view class="page">
+    <view class="page__bd">
+      <view class='container'>
+      <view class='weui-tab__header'>
+          <view class='weui-tab__header1'>台号</view>
+          <view class='weui-tab__header2'>单号</view>
+          <view class='weui-tab__header3'>时间</view>
+          <view class='weui-tab__header4'>应收</view>
+          <view class='weui-tab__header5'>实收</view>
+      </view>
+<!-- <text>(其、挂、卡、支、微、现)</text> -->
+ <scroll-view style='height:900rpx;' scroll-y="true" >
+      <view class='weui-tab__body'>
+     
+        <block wx:for="{{orders}}" wx:key="">
+          <view class='body-item'>
+             <view class='{{item.sumMry!=item.mry?"body-item-top2":"body-item-top"}}'>
+              <text class='item-top1'>{{item.tableNo}}</text>
+              <text class='item-top2'>{{item.orderNo}}</text>
+              <text class='item-top2'>{{item.time}}</text>
+              <text class='item-top3'>{{item.sumMry}}</text>
+              <text class='item-top4'>{{item.mry}}</text>
+             </view>
+          </view>
+        </block>
+      </view>
+        </scroll-view>
+      
+        <view class='weui-tab__footer'>
+
+           <view class='footer-item'>
+             <view class='foot-item-top'>
+              <text class='footer-item-top2'>应收({{totalsumCount}})：￥{{totalsumMry}}</text>
+              <text class='footer-item-top3'> 实收({{totalCount}})：￥{{totalMry}}</text>
+             </view>
+             <view class='body-item-bottom'>日期：{{orderDate}}</view>
+          </view>
+        </view>  
+      </view>        
+    </view>
+</view>
+                    

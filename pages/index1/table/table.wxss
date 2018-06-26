@@ -1,0 +1,49 @@
+/* pages/index1/table/table.wxss */
+.page {
+  width: auto;
+  height: auto;
+}
+/* 搜素栏  */
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}
+/* 列表项  */
+.table-list {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  width: auto;
+  height: 980rpx;
+  padding: 25rpx;
+}
+.table-list-item {
+  font-size: 23px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 200rpx;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  border: 1rpx solid black;
+  margin-bottom: 20rpx;
+}
+.table-list-item2 {
+  font-size: 23px;
+  font-weight: 600;
+  color:  green;
+  text-align: center;
+  line-height: 200rpx;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  border: 1rpx solid black;
+  margin-bottom: 20rpx;
+}

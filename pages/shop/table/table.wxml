@@ -1,0 +1,17 @@
+<!--pages/shop/table/table.wxml-->
+<view class='table-page'>
+
+    <view class='icons'>
+      <icon type="info" size="93"></icon>
+    </view>
+  
+     <view class='table-boby'>
+        <text>请输入店铺总餐桌：</text><input></input>
+
+     </view>
+    <view class='table-btn'>
+      <button type='primary' hover-class='button-hover'>保存</button>
+    </view>  
+
+
+</view>

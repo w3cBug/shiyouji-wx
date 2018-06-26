@@ -1,0 +1,63 @@
+<view class='container'>
+    <view class='page-body'>
+
+      <view class='header' style='height:80rpx'>
+        <view class='header-item'>微信名</view>
+        <view class='header-item'>姓名</view>
+        <view class='header-item'>职位</view>
+        <view class='header-item'>联系电话</view>
+        <view class='header-item'></view>
+        
+      
+      </view>
+
+        <view class='staff-list' wx:for="{{list}}">
+          <view class='list-wcname'>{{item.wcname}}</view>
+          <view class='list-name'>{{item.name}}</view>
+          <view class='list-post'>{{item.post}}</view>
+          <view class='list-tel'>{{item.tel}}</view>
+          <button class='list-btn' bindtap='btnTap' data-id='{{index}}' >编辑</button>
+        </view>
+              
+
+      <!-- 账单详细内容  -->
+      <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+        <view class="modal-dialog" wx:if="{{showModal}}">
+            <view class="modal-content">
+              <view class='cancel' catchtap='cencelTap'><icon type='clear' size='30'></icon></view>
+            
+              <view class='edit-list'>
+                <view class='list-402'>微信昵称：</view>
+                <input class='edit-input' value='{{editList.wcname}}'></input>
+              </view>
+               <view class='edit-list'>
+                <view class='list-402'>姓名：</view>
+                <input class='edit-input' value='{{editList.name}}'></input>
+              </view>
+               <view class='edit-list'>
+                <view class='list-402'>职位：</view>
+                <input class='edit-input' value='{{editList.post}}'></input>
+              </view>
+               <view class='edit-list'>
+                <view class='list-402'>联系电话：</view>
+                <input class='edit-input' value='{{editList.tel}}'></input>
+              </view>
+              <view class='trip'>权限设置：</view>
+
+                <checkbox-group class='trip-box' bindchange="checkboxChange">
+                  <label class="checkbox" wx:for="{{items}}">
+                    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+                  </label>
+                </checkbox-group>
+                <view class='save'>
+                    <button bindtap='saveTap' size='mini' >确认保存</button>
+                </view>
+            </view>
+        </view>
+
+      <!-- 账单详细内容 end -->
+
+
+
+    </view>
+</view>

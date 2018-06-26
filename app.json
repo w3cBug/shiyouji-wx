@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index1/index1",
+    "pages/index1/menu/menu",
+    "pages/index1/checkout/checkout",
+    "pages/index1/table/table",
+    "pages/index1/daysum/daysum",
+    "pages/shop/shop",
+    "pages/index1/pay/pay",
+    "pages/statistics/statistics",
+    "pages/statistics/dayStat/dayStat",
+    "pages/statistics/weekStat/weekStat",
+    "pages/statistics/monthStat/monthStat",
+    "pages/shop/add/add",
+    "pages/shop/staff/staff",
+    "template/data/data",
+    "pages/shop/table/table",
+    "pages/shop/store/store"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#13D1BE",
+    "navigationBarTitleText": "食游记",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index1/index1",
+        "iconPath": "image/home_hl.png",
+        "selectedIconPath": "image/home.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/statistics/statistics",
+        "iconPath": "image/menu_hl.png",
+        "selectedIconPath": "image/menu.png",
+        "text": "统计"
+      },
+      {
+        "pagePath": "pages/shop/shop",
+        "iconPath": "image/shop_hl.png",
+        "selectedIconPath": "image/shop.png",
+        "text": "店铺"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 30000,
+    "connectSocket": 30000,
+    "uploadFile": 30000,
+    "downloadFile": 30000
+  },
+  "debug": false
+}

@@ -1,0 +1,57 @@
+/* pages/index1/checkout/checkout.wxss */
+.page {
+  width: auto;
+  height: auto;
+}
+/* 搜素栏  */
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}
+/* 列表  */
+.table-list {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  width: auto;
+  height: 980rpx;
+  padding: 25rpx;
+}
+.table-list-item {
+  font-weight: 600;
+  width: 202rpx;
+  height: 320rpx;
+}
+.table-num {
+  font-size: 23px;
+  width: 200rpx;
+  height: 200rpx;
+  border: 1rpx solid black;
+  border-radius: 50%;
+  line-height: 200rpx;
+  text-align: center;
+}
+.table-num2 {
+  font-size: 23px;
+  color:  green;
+  width: 200rpx;
+  height: 200rpx;
+  border: 1rpx solid black;
+  border-radius: 50%;
+  line-height: 200rpx;
+  text-align: center;
+}
+.quantity,.money {
+  font-size: 13px;
+  width: auto;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+}

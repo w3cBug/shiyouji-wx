@@ -1,0 +1,40 @@
+<!--pages/shop/shop.wxml-->
+       <view class="weui-cells weui-cells_after-title">
+          
+          <navigator url="/pages/shop/add/add"  hover-class="weui-cell_active">
+            <view class="weui-cell menu-list">
+                <view class="weui-cell__hd">
+                    <image src="/image/addDish.png" style="margin-right: 15px;vertical-align: middle;width:40px; height: 40px;"></image>
+                </view>
+                <view class="weui-cell__bd">菜品录入</view>
+            </view>
+          </navigator>
+
+          <navigator url="/pages/shop/table/table"  hover-class="weui-cell_active">
+            <view class="weui-cell menu-list">
+                <view class="weui-cell__hd">
+                    <image src="/image/table.png" style="margin-right: 15px;vertical-align: middle;width:40px; height: 40px;"></image>
+                </view>
+                <view class="weui-cell__bd">餐桌管理</view>
+            </view>
+          </navigator>
+
+          <navigator url="/pages/shop/staff/staff"  hover-class="weui-cell_active">
+            <view class="weui-cell menu-list">
+                <view class="weui-cell__hd">
+                    <image src="/image/addpeople.png" style="margin-right: 15px;vertical-align: middle;width:40px; height: 40px;"></image>
+                </view>
+                <view class="weui-cell__bd">员工管理</view>
+            </view>
+          </navigator>
+          
+           <navigator url="/pages/shop/store/store"  hover-class="weui-cell_active">
+            <view class="weui-cell menu-list">
+                <view class="weui-cell__hd">
+                    <image src="/image/shop_red.png" style="margin-right: 15px;vertical-align: middle;width:40px; height: 40px;"></image>
+                </view>
+                <view class="weui-cell__bd">店铺管理</view>
+            </view>
+          </navigator>
+         
+      </view>

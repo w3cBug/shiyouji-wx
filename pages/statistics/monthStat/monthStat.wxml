@@ -1,0 +1,37 @@
+<!--pages/statistics/dayStat/dayStat.wxml-->
+    <view class="page__bd">
+      <view class='container'>
+      <view class='weui-tab__header'>
+          <view class='weui-tab__header-left'>日期</view>
+          <view class='weui-tab__header-middle'>应收</view>
+          <view class='weui-tab__header-right'>实收</view>
+      </view>
+<!-- <text>(其、挂、卡、支、微、现)</text> -->
+      <view class='weui-tab__body'>
+        <scroll-view scroll-y style='height:938rpx'>
+          <block wx:for="{{dayList}}" wx:key="">
+            <view class='body-item'  bindtap='dayTap'  data-orderdate="{{item.orderDate}}">
+              <view class='body-item-top'>
+                <text class='item-top-left'>{{item.orderDate}}</text>
+                <text class='item-top-middle'>￥{{item.sumMry}}</text>
+                <text class='item-top-right'>￥{{item.mry}}</text>
+              </view>
+              <view class='body-item-bottom'>{{item.typeMoney}}</view>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+      
+        <view class='weui-tab__footer'>
+           <view class='footer-item'>
+             <view class='foot-item-top'>
+              <text class='item-top-left'>合计</text>
+              <text class='item-top-middle'>￥{{totalMry.sumMry}}</text>
+              <text class='item-top-right'>￥{{totalMry.mry}}</text>
+             </view>
+             <view class='body-item-bottom'>{{totalMry.typeMoney}}</view>
+          </view>
+        </view>  
+      </view>        
+    </view>
+                    

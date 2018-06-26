@@ -1,0 +1,123 @@
+/* pages/shop/store/store.wxss */
+@import '../../../weui.wxss';
+.weui-cell {
+  line-height: 55rpx;
+}
+.store-page {
+  height: 100%;
+}
+.store-header {
+  height: 350rpx;
+  width: 100%;
+  display: flex; 
+  background: #13D1BE;
+  align-items: center;
+  justify-content: center;
+  border-radius:0 0 30% 30%;
+  background: #13D1BE;
+  margin-bottom: 10rpx;
+}
+.upload {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 50%;
+  border: 2rpx solid #fff;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #9E9E9E;
+  white-space: nowrap;
+  font-weight: 600;
+  width: 100%;
+  height: 100%;
+}
+.header-img image{
+  width: 100rpx;
+  height: 100rpx;
+
+}
+.weui-uploader__file {
+  margin: 0;
+  padding: 0;
+}
+.weui-uploader__img {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 50%;
+}
+.store-body {
+  height:600rpx;
+  background: #fff;
+}
+.store-info {
+  height: 500rpx;
+  margin-bottom: 20rpx;
+}
+.list-403 {
+  display: flex;
+  flex-direction: row;
+  font-size: 32rpx;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.list-403 input,.time-picker,.city-picker {
+  font-size: 28rpx;
+  margin-left: 60rpx;
+  width: 100%;
+}
+.time-picker1 {
+  height: 50rpx;
+  font-size: 32rpx;
+   margin-left: 20rpx;
+}
+.time-picker,.city-picker {
+  height: 50rpx;
+  font-size: 32rpx;
+}
+
+.add-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100rpx;
+  width: auto;
+  font-size: 28rpx;
+  font-weight: 600rpx;
+  color: #A8A8A8;
+  border-top: 1rpx solid #dadada;
+}
+.add-item switch {
+  margin-left: 15rpx;
+}
+/* 脚部  */
+.store-footer {
+  height: 240rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+.store-footer text{
+  font-weight: 600;
+  font-size: 25rpx;
+  margin-bottom: 35rpx;
+}
+.store-footer button {
+  height: 80rpx;
+  width: 350rpx;
+  border-radius: 50rpx;
+  line-height: 80rpx;
+  font-weight: 600rpx;
+  background: #13D1BE;
+  color: #fff;
+}

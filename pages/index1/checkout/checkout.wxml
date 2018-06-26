@@ -1,0 +1,51 @@
+<!--pages/index1/checkout/checkout.wxml-->
+<view class='page'>
+  <view class="weui-search-bar">
+        <view class="weui-search-bar__form">
+            <view class="weui-search-bar__box">
+                <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                <input type="text" class="weui-search-bar__input" placeholder="请输入台号数字选择台号" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                    <icon type="clear" size="14"></icon>
+                </view>
+            </view>
+            <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                <icon class="weui-icon-search" type="search" size="14"></icon>
+                <view class="weui-search-bar__text">输入台号数字选择台号</view>
+            </label>
+        </view>
+        <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+    <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+        <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">
+                <view>1号台</view>
+            </view>
+        </navigator>
+        <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">
+                <view>2号台</view>
+            </view>
+        </navigator>
+        <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">
+                <view>3号台</view>
+            </view>
+        </navigator>
+    </view>
+
+    <scroll-view  scroll-y style="height: 980rpx;">
+      <view class='table-list'>
+       <block wx:for="{{tables}}" wx:key="{{item.idx}}" wx:if="{{item.tableState==1}}">
+        <navigator open-type="redirect" url='../pay/pay?tableNo={{item.tableNo}}' hover-class="navigator-hover">
+          <view class='table-list-item' bindtap='tableTap'>
+              <view class='table-num2'>{{item.tableNo}}号台</view>
+              <view class='money'>总:￥ {{item.sumMry}}</view>
+          </view>
+        </navigator>
+        </block> 
+       
+         
+      </view>
+    </scroll-view> 
+</view>

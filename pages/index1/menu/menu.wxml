@@ -1,0 +1,107 @@
+
+
+  
+      <view class='container'>
+        <view class='menu'>
+        <!-- 左侧  -->
+               <view class='menu-left'>
+                  <block wx:for="{{typeName}}" wx:key="{{item.id}}">
+                      <view class='type-list ' bindtap='turnMenu'  data-id="{{index}}" data-mainMenuId="{{item.mainMenuId}}">
+                         <text class='{{index == id ?"type-name":""}} '>{{item.mainMenuName}}</text> 
+                      </view>
+                  </block>
+                </view>
+          
+          
+        <!-- 右侧  -->
+          <view class='menu-right'>
+          
+          <scroll-view style='height:980rpx;'scroll-y="true" >
+
+            <block wx:for="{{menuPage}}" wx:key="" wx:if="{{item.mainMenuId === mainMenuId}}" >
+              <view class='menu-box '  >
+                <view class='menu-img'>
+                   <image src='/image/food.png'></image>
+                </view>
+                <view class='menu-name'>{{item.menuName}}</view>
+                <view class='menu-pinglun'>{{"   "}}   </view>
+                <view class='menu-price'>￥   {{item.price}}</view>
+
+                <view class='menu-numb'>
+                  <image src="/image/del.png" class="add-img"  bindtap="{{item.qty!=0?'delTap':''}}" data-index="{{index}}"></image>
+                   <view wx:if="{{item.qty !=0}}">{{item.qty}}</view>
+                  
+                  <image src='/image/add.png' class='add-img' bindtap="addTap" data-index="{{index}}" ></image>
+                  
+                </view>
+                
+              </view>
+            </block>
+
+
+            </scroll-view>
+          </view>
+
+        </view>
+      <!-- 提示 -->
+      <view class='tips' catchtap='tipsTap'>
+        <view class='up-arrows'  ><image src='/image/up.png'></image></view>
+        <view class='tips-text'  >菜品:{{foodQty>0?foodQty+"￥"+foodMry:" 无 "}}  饭:{{riceQty>0?riceQty+"￥"+riceMry:" 无 "}}    茶位:{{teaQty>0?teaQty+"￥"+teaMry:" 无 "}} 
+        </view>   
+      </view>  
+      <!-- 账单详细内容  -->
+      <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+        <view class="modal-dialog" wx:if="{{showModal}}">
+          <scroll-view  style='height:730rpx' scroll-y="true" >
+            <view class="modal-content">
+              <block wx:for="{{menuPage}}" wx:key=""  wx:if="{{item.qty>0&&item.mainMenuType=='菜品'}}">
+                <view class='menu-box '  >
+                  <view class='menu-img'>
+                    <image src='/image/food.png'></image>
+                  </view>
+                  <view class='menu-name'>{{item.menuName}}</view>
+                  <view class='menu-pinglun'></view>
+                  <view class='menu-price'>￥   {{item.price}}</view>
+                  <view class='menu-numb'>
+                    <image src="/image/del.png" class="add-img"  bindtap="{{item.qty!=0?'delTap':''}}" data-index="{{index}}"></image>
+                    <view wx:if="{{item.qty !=0}}">{{item.qty}}</view>
+                    <image src='/image/add.png' class='add-img' bindtap="addTap" data-index="{{index}}" ></image>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </scroll-view>
+              <view class='little-cost'>
+              <block wx:for="{{menuPage}}" wx:key=""  wx:if="{{item.qty>0&&item.mainMenuType!='菜品'}}">
+                <view class='rice'>
+                  <view class='rice-left'>{{item.menuName}}: ￥   {{item.price}}</view>    
+                  <view class='rice-right'>
+                    <view class='rice-add'>
+                      <image src="/image/del.png" class="add-img"  bindtap="{{item.qty!=0?'delTap':''}}" data-index="{{index}}"></image>
+                        <view class='rice-num'> {{item.qty}} </view>
+                      <image src='/image/add.png' class='add-img' bindtap="addTap" data-index="{{index}}" ></image>
+                    </view> 
+                  </view>
+                </view>
+              </block>
+
+
+
+                
+              </view>
+            <view class='tips1' bindtap='downTap'> 菜品:{{foodQty>0?foodQty+"￥"+foodMry:" 无 "}}  饭:{{riceQty>0?riceQty+"￥"+riceMry:" 无 "}}    茶位:{{teaQty>0?teaQty+"￥"+teaMry:" 无 "}} </view> 
+              <view class='down-arrows' bindtap='downTap'><image src='/image/down.png'></image></view>
+            
+          </view>
+
+
+
+      <!-- 底部  -->
+         <view class='menu-foot'>
+            <view class='total-price' bindtap='downTap'>
+               总:￥  {{sumMry}}
+            </view>
+            <view class='pay' bindtap='payTap'>{{table.tableState==1?"马上加单":"马上下单"}} </view>
+         </view>
+       </view>
+    
